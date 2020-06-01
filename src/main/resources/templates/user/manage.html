@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理界面</title>
+</head>
+<body>
+    <h1>User Manage</h1>
+    <div shiro:hasPermission="user:add">
+        <a href="add">用户添加</a><br>
+    </div>
+    <div shiro:hasPermission="user:update">
+        <a href="update">用户更新</a>
+    </div>
+    <div shiro:hasRole="manager">管理员您好</div>
+</body>
+</html>

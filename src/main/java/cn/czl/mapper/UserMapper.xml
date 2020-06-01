@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件存放CRUD的sql语句 -->
+<mapper namespace="cn.czl.mapper.UserMapper">
+    <select id="findByUname" parameterType="string" resultType="cn.czl.domain.User">
+		select * from user where uname=#{uname.jdbcType=VARCHAR};
+	</select>
+
+    <insert id="insertUser">
+        insert into user (uname, upwd, ucdate, uldate) values (#{0}, #{1}, #{2}, #{3});
+    </insert>
+
+    <select id="findBasicById" parameterType="integer" resultType="cn.czl.domain.User">
+        select uid, uname, upwd, perms, role, pid from user where uid=#{uid};
+    </select>
+
+    <select id="findById" parameterType="integer" resultType="cn.czl.domain.User">
+        select * from user where uid=#{uid};
+    </select>
+</mapper>

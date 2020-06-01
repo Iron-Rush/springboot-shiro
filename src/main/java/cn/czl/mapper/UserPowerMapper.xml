@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件存放CRUD的sql语句 -->
+<mapper namespace="cn.czl.mapper.UserPowerMapper">
+    <select id="getUserPowerListById" parameterType="integer" resultType="cn.czl.domain.UserPower">
+		select * from user_power where pid=#{pid};
+	</select>
+
+<!--    <insert id="insertUser">-->
+<!--        insert into user (uname, upwd, ucdate, uldate) values (#{0}, #{1}, #{2}, #{3});-->
+<!--    </insert>-->
+
+<!--    <select id="findBasicById" parameterType="integer" resultType="cn.czl.domain.User">-->
+<!--        select uid, uname, upwd, perms, role from user where uid=#{uid};-->
+<!--    </select>-->
+
+<!--    <select id="findById" parameterType="integer" resultType="cn.czl.domain.User">-->
+<!--        select * from user where uid=#{uid};-->
+<!--    </select>-->
+</mapper>
